@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome!</title>
+    <!-- meta tags required -->
+  </head>
+  <body>
+    <div class="Header">
+      <h1>SocialVJTI</h1>
+    </div>
+<div class="Login">
+  <form class="" action="login.php" method="post" autocomplete="on">
+  <lable>ID</lable>
+    <input type="number" name="college_id" required="required"  maxlength="9">
+
+  <br>
+  <lable>Password
+    <input type="password" name="password" required="required">
+  </lable>
+    <br>
+    <button type="submit" name="button" value="login">Log In</button>
+    <br>
+
+    <!-- php to show login error -->
+    <div class="login_error_message">
+      <?php
+   if (isset($_POST["login_error"])) {
+     echo "Problem with login :(";
+   }
+
+
+
+
+       ?>
+    </div>
+  </form>
+
+</div>
+<br>
+<br>
+
+<div class="SignUp">
+  <form class="" action="signup.php" method="post">
+  <lable>ID <sup>*</sup>
+    <input type="number" name="college_id" maxlength="9" required="required">
+  </lable>
+    <br>
+  <lable>Name <sup>*</sup>
+    <input type="text" name="name" maxlength="20" required="required">
+  </lable>
+    <br>
+    <label>E-mail <sup>*</sup>
+      <input type="email" name="email" required="required">
+    </label>
+    <br>
+  <lable>Password <sup>*</sup>
+    <input type="password" name="password" required="required" id="password">
+  </lable>
+    <br>
+  <lable>Confirm Password <sup>*</sup>
+    <input type="password" name="confirm_password" required="required" id="confirm_password">
+  </lable>
+
+  <!-- JavaScropt to check  password == confirmPassword -->
+
+<script type="text/javascript">
+    var password = document.getElementById("password");
+    var confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword(){
+      if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+
+  <br>
+  <button type="submit" name="button" value="signUp">Sign Up!</button>
+  <div class="message">
+    <?php
+   if (isset($_POST["success"]))
+   {
+     echo "Successfully Signed In. Proceed with Log In";
+   }
+   elseif (isset($_POST["error"])) {
+        echo "There is some problem while signing. Try again." ;
+   }
+   else {
+     // let's see !
+   }
+  ?>
+
+  </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,2 +1,2 @@
-# SV
-Social Networking website
+# SocialVJTI
+Social website for VJTI

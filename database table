@@ -1,0 +1,23 @@
+CREATE TABLE `student` (
+ `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+ `college_id` int(9) unsigned NOT NULL,
+ `name` varchar(30) NOT NULL,
+ `email` varchar(40) NOT NULL,
+ `password` char(32) NOT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `college_id` (`college_id`),
+ UNIQUE KEY `email` (`email`)
+)
+
+
+
+CREATE TABLE `btech_it` (
+ `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+ `author` int(9) unsigned NOT NULL,
+ `post` varchar(200) NOT NULL,
+ `time_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `reply` int(10) unsigned DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ KEY `reply` (`reply`),
+ CONSTRAINT `btech_it_ibfk_1` FOREIGN KEY (`reply`) REFERENCES `btech_it` (`id`)
+) 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+  SocialVJTI
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+ max-width: 95%;
+ margin: auto;
+ background: linear-gradient(270deg,#46ca1f, #ca1f4b, #16dcf2, #21f216);
+background-size: 600% 600%;
+-webkit-animation: AnimationName 19s ease infinite;
+-moz-animation: AnimationName 19s ease infinite;
+-o-animation: AnimationName 19s ease infinite;
+animation: AnimationName 19s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+h1{
+
+  border-bottom: 0.125em solid #000000;
+  font-size: 3em;
+}
+.Login ,.Signup {
+border-radius: 1em;
+  min-width: 28%;
+  margin: 1em 10% 1em auto ;
+  padding: 1em;
+  display: inline-block;
+  float: right;
+  border: 1px solid black;
+
+}
+
+.Login:hover  , .Signup:hover {
+background-color: #241521;
+color: #DBEADE
+}
+.bg {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+div b {
+  margin: 1px ;
+  padding: 0em 0em 1px 0em;
+  font-size: 1.5em;
+}
+
+
+</style>
+</head>
+
+<body>
+<!-- Name of site -->
+  <h1>SocialVJTI</h1>
+<div class="container-fluid">
+<div class="Login">
+  <form  action="home.php" autocomplete="on" method="post" class="form-group">
+    <b>Log In</b><br>
+
+    <label for="college_id_login">College ID</lable>
+      <br>
+    <input type="number" name="college_id" maxlength="9" id="college_id_login" required="required" class="form-control" placeholder="ID Number">
+    <br>
+
+    <lable for="login_password">Password</label>
+      <br>
+    <input type="password" name="password" id="login_password" required="required" class="form-control"  placeholder="Password">
+    <br>
+    <button type="submit" class="btn btn-success">Log In</button>
+  </form>
+
+</div>
+<!-- Login Form -->
+<br><br>
+<!-- Sign Up form -->
+<div class="Signup">
+  <form  action="signup.php" autocomplete="off" method="post" class="form-group">
+    <b>Sign Up</b><br>
+
+    <label for="college_id_signup">College ID</label>
+    <br>
+    <input type="number" name="college_id" id="college_id_signup" required="required" class="form-control" placeholder="ID Number">
+    <br>
+
+    <label for="name">Name</legal>
+    <br>
+    <input type="text" name="name" id="name" required="required" class="form-control" placeholder="Username">
+    <br>
+    <label>E-mail <sup>*</sup>
+      <input type="email" name="email" required="required" class="form-control" placeholder="email">
+    </label>
+    <br>
+
+    <label for="password">Password</lable>
+    <br>
+    <input type="password" name="password" id="password" required="required" class="form-control" placeholder="Password">
+    <br>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <br>
+    <input type="password" name="confirmPassword" id="confirmPassword" required="required" class="form-control" placeholder="Password">
+    <br>
+
+    <!-- JavaScropt to check  password == confirmPassword -->
+
+    <script>
+      var password = document.getElementById("password");
+      var confirmPassword = document.getElementById("confirmPassword");
+
+      function validatePassword(){
+        if(password.value != confirmPassword.value) {
+          confirmPassword.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirmPassword.setCustomValidity('');
+        }
+      }
+
+      password.onchange = validatePassword;
+      confirmPassword.onkeyup = validatePassword;
+    </script>
+
+
+    <button type="submit" class="btn btn-success">Sign Up</button>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+<footer class="container-fluid bg text-center">
+  <p>  @2017 Created and Maintained with all love By <a href="http://shubhendusingh.com">Shubhendu Singh</a> And <a href="https://www.linkedin.com/in/pramod-choudhari-73bb36111/">Pramod Choudhari</a></p>
+</footer>
+
+</body>
+</html>
